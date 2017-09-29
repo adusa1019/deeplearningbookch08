@@ -1,4 +1,4 @@
-# deeplearningbook Chapter 08
+# deep learning  Chapter 08
 ## Optimization for Training Deep Models
 
 ---
@@ -105,16 +105,32 @@
 
 ---
 ## 8.3 Basic Algorithms
-- 要約
-
+- stochastic gradient descent (SGD)について説明する
+    - ミニバッチで勾配を推定する勾配降下法
 +++
 ### 8.3.1 Stochastic Gradient Descent
+- ミニバッチにて勾配を推定する最急降下法
+    - 最小値で勾配が0にならない
+    - 学習率を動的に変える必要あり -> 設定が職人芸
+- 理論的にはバッチ勾配降下法の方がSGDより性能が良い
+- 実務的には SGD を使うメリットは様々ある
+    - 訓練データサイズとが増えても計算時間はそれほど変わらない
+    - 訓練データサイズ大きくても収束する など
 
 +++
 ### 8.3.2 Momentum
+- 過去の勾配の蓄積と現在の勾配を混ぜて更新量を決定
+    - 8.15-8.16式
+    - 勾配方向にある程度一貫性を持たせることで、悪条件のヘッセ行列による影響を軽減
+- 物理学的な解釈もできなくはない
+    - こういうのは人によって好き嫌いがあるように思う
 
 +++
 ### 8.3.3 Nesterov Momentum
+- momentum SGD の勾配の計算位置を変更
+    - 8.22 式
+- 凸関数に対するバッチ勾配法の場合、収束率が改善する
+    - ミニバッチを利用する場合、収束率は改善しない
 
 ---
 ## 8.4 Parameter Initialization Strategies
