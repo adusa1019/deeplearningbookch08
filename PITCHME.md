@@ -183,3 +183,77 @@
     - 関連ないタスクの学習パラメータでも効果的な場合がある
 - 詳しくはPart III で取り上げる
     - 多分 Chapter 15
+
+---
+## 8.5 Algorithms with Adaptive Learning Rates
+- 既に見てきたように学習率は最も難しいハイパーパラメータの一つ
+- 学習率を適応的に変化するアルゴリズムが多数提案されており、そのいくつかを紹介する
+
++++
+### 8.5.1 AdaGrad
+- 2011 年に提案
+    - adaptive subgradient methods が由来っぽい
+    - パラメータ毎に異なるペースで学習率を減衰させられる
+- 凸最適化では望ましい理論的な性質を持つ
+    - (ここ)[https://qiita.com/Quasi-quant2010/items/0c50515a296be2dcb3ef]を信じるならばミニバッチとバッチの場合で更新量の差異を減らしたようだ
+- DNN では学習率の減衰が速すぎる傾向にある
+
++++
+### 8.5.2 RMSProp
+- 2012 年に提案
+    - root mean square propagatioin が由来っぽい
+    - 過去の勾配に対する忘却パラメータを導入した
+        - 指数移動平均で過去の実績を考慮
+- AdaGrad の非凸最適化の場合の性能を改善
+    - AdaGrad より直近の結果を優先させる
+
++++
+### 8.5.3 Adam
+- 2014 年に提案
+    - adaptive moments が由来っぽい
+    - 素朴に見ると RMSprop + Momentum
+    - バイアス補正がオリジナリティ
+- 最初にとりあえず試してみるものの 1つ
+
++++
+### 8.5.4 Choosing the Right Optimization Algorithm
+- どのアルゴリズムを選ぶべきかケースバイケース
+- 現在も新たなアルゴリズムが提案されている
+    - Eve: 2016/11
+    - YellowFin: 2017/06
+- この本に含まれていない手法も含めた概略
+    - https://mosko.tokyo/post/optimization2/
+
+---
+## 8.6 Approximate Second-Order Methods
+
++++
+### 8.6.1 Newtons's Method
+
++++
+### 8.6.2 Conjugate Gradients
+
++++
+### 8.6.3 BFGS
+
+---
+## 8.7 Optimization Strategies and Meta-Algorithms
+
++++
+### 8.7.1 Batch Normalization
+
++++
+### 8.7.2 Coordinate Descent
+
++++
+### 8.7.3 Polyak Averaging
+
++++
+### 8.7.4 Supervised Pretraining
+
++++
+### 8.7.5 Designing Models to Aid Optimization
+
++++
+### 8.7.6 Continuation Methods and Curriculum Learning
+
