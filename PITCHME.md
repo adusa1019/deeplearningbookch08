@@ -256,7 +256,7 @@
     - メモリ使用量が $O(n)$ まで改善
 ---
 ## 8.7 Optimization Strategies and Meta-Algorithms
-- 今までに紹介して紹介してきたアルゴリズムと組み合わせられる(かもしれない)有名な学習戦略。メタアルゴリズムの紹介
+- 今までに紹介して紹介してきたアルゴリズムと組み合わせられる(かもしれない)有名な学習戦略・メタアルゴリズムの紹介
     - 使えばいつでも性能が良くなるわけではない
 
 
@@ -283,8 +283,7 @@
 +++
 ### 8.7.4 Supervised Pretraining
 - 単純なタスクで単純なモデルをトレーニングしてから目的のモデルをトレーニングする
-    - pretraing
-    - fine-tuning
+    - pretraing と fine-tuning
 - greedy supervised pretraing
     - 1層目だけ学習、1層目を学習結果で固定して2層目学習、・・・、みたいな感じ
 - FitNets
